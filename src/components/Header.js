@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-const ContentHeader = styled.header`
+const ContainerHeader = styled.header`
     background-color: #26C6DA;
     padding: 10px;
     font-weight: bold;
@@ -18,9 +18,9 @@ const TextHeader = styled.h1`
 
 const Header = ({ title }) => {
     return ( 
-        <ContentHeader>
+        <ContainerHeader>
             <TextHeader>{title}</TextHeader>
-        </ContentHeader>
+        </ContainerHeader>
      );
 }
  
