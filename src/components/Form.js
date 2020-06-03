@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { getDiferrenceYear } from '../helper';
+import { getDiferrenceYear, calculateBrand } from '../helper';
 const Field = styled.div`
   align-items: center;
   display: flex;
@@ -95,7 +95,7 @@ const Form = () => {
     // american 15%
     // asian 5%
     // european 30%
-    
+    result = calculateBrand(brand) * result;    
 
     // basic 20%
     // complete 50%
