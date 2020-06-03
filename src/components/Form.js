@@ -1,10 +1,10 @@
 import React from "react";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 const Field = styled.div`
+  align-items: center;
   display: flex;
   margin-bottom: 1rem;
-  align-items: center;
 `;
 
 const Label = styled.label`
@@ -12,15 +12,33 @@ const Label = styled.label`
 `;
 
 const Select = styled.select`
-  display: block;
-  width: 100%;
-  padding: 1rem;
   border: 1px solid #e1e1e1;
+  display: block;
+  padding: 1rem;
   -webkit-appearance: none;
+  width: 100%;
 `;
 
 const InputRadio = styled.input`
   margin: 0 1rem;
+`;
+
+const Button = styled.button`
+  background-color: #00838f;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 2rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  transition: background-color .3s ease;
+  width: 100%;
+
+  &:hover {
+    background-color: #26c6d1;
+    cursor: pointer;
+  }
 `;
 
 const Form = () => {
@@ -54,24 +72,12 @@ const Form = () => {
       </Field>
 
       <Field>
-          <Label>Plan</Label>
-          <InputRadio
-            type="radio"
-            name="plan"
-            value="basic"
-          /> Básico
-
-        <InputRadio
-            type="radio"
-            name="plan"
-            value="complete"
-        /> Completo
+        <Label>Plan</Label>
+        <InputRadio type="radio" name="plan" value="basic" /> Básico
+        <InputRadio type="radio" name="plan" value="complete" /> Completo
       </Field>
 
-      <button 
-        type="button"
-      >Cotizar</button>
-
+      <Button type="button">Cotizar</Button>
     </form>
   );
 };
