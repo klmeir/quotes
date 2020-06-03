@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-
+import { getDiferrenceYear } from '../helper';
 const Field = styled.div`
   align-items: center;
   display: flex;
@@ -74,8 +74,7 @@ const Form = () => {
   
   // click submit
   const handleSubmit = e => {
-    e.preventDefault();
-    console.log("submit");
+    e.preventDefault();    
 
     if(brand.trim() === '' || year.trim() === '' || plan.trim() === ''){
       setError(true);
@@ -84,13 +83,19 @@ const Form = () => {
 
     setError(false);
 
+    //base 2000
+    let result = 2000;
+
     // get years diferrence
+    const diferrence = getDiferrenceYear(year);    
 
     // for each year subtract 3%
+    result -= (diferrence * 3 * result) / 100;    
 
     // american 15%
     // asian 5%
     // european 30%
+    
 
     // basic 20%
     // complete 50%
