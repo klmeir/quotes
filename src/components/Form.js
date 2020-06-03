@@ -41,6 +41,15 @@ const Button = styled.button`
   }
 `;
 
+const Error = styled.div`
+  background-color: red;
+  color: white;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+`;
+
 const Form = () => {
 
   const [data, setData] = useState({
@@ -48,6 +57,8 @@ const Form = () => {
     year: '',
     plan: ''
   });
+
+  const [error, setError] = useState(false);
 
   // extract values from state
   const { brand, year, plan } = data;
@@ -60,8 +71,40 @@ const Form = () => {
     });
   }
 
+  
+  // click submit
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log("submit");
+
+    if(brand.trim() === '' || year.trim() === '' || plan.trim() === ''){
+      setError(true);
+      return;
+    }
+
+    setError(false);
+
+    // get years diferrence
+
+    // for each year subtract 3%
+
+    // american 15%
+    // asian 5%
+    // european 30%
+
+    // basic 20%
+    // complete 50%
+
+    // total
+
+  }  
+
   return (
-    <form>
+    <form
+      onSubmit={handleSubmit}
+    >
+      {error ? <Error>Todos los campos son obligatorio</Error> : null}
+
       <Field>
         <Label>Marca</Label>
         <Select
@@ -115,7 +158,7 @@ const Form = () => {
         /> Completo
       </Field>
 
-      <Button type="button">Cotizar</Button>
+      <Button type="submit">Cotizar</Button>
     </form>
   );
 };
