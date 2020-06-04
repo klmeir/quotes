@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { getDiferrenceYear, calculateBrand } from '../helper';
+import { getDiferrenceYear, calculateBrand, getPlan } from '../helper';
 const Field = styled.div`
   align-items: center;
   display: flex;
@@ -99,6 +99,8 @@ const Form = () => {
 
     // basic 20%
     // complete 50%
+    const incrementPlan = getPlan(plan);
+    result = parseFloat(incrementPlan * result).toFixed(2);    
 
     // total
 
