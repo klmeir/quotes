@@ -50,7 +50,7 @@ const Error = styled.div`
   width: 100%;
 `;
 
-const Form = () => {
+const Form = ({ setSummary }) => {
 
   const [data, setData] = useState({
     brand: '',
@@ -101,9 +101,11 @@ const Form = () => {
     // complete 50%
     const incrementPlan = getPlan(plan);
     result = parseFloat(incrementPlan * result).toFixed(2);    
-
-    // total
-
+    
+    setSummary({
+      quotation: result,
+      data
+    });
   }  
 
   return (
