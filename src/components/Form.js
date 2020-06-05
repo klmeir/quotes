@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
+import PropTypes from 'prop-types';
 import { getDiferrenceYear, calculateBrand, getPlan } from '../helper';
+
 const Field = styled.div`
   align-items: center;
   display: flex;
@@ -107,7 +109,7 @@ const Form = ({ setSummary, setLoading }) => {
     setTimeout(() => {
       setLoading(false);
       setSummary({
-        quotation: result,
+        quotation: Number(result),
         data
       });
     }, 3000);
@@ -160,15 +162,15 @@ const Form = ({ setSummary, setLoading }) => {
         <InputRadio 
           type="radio" 
           name="plan" 
-          value="basic"             
-          checked={plan === "basic"}
+          value="basico"             
+          checked={plan === "basico"}
           onChange={getData}
         /> Básico
         <InputRadio 
           type="radio"
           name="plan"
-          value="complete"
-          checked={plan === "complete"}
+          value="completo"
+          checked={plan === "completo"}
           onChange={getData}
         /> Completo
       </Field>
@@ -177,5 +179,10 @@ const Form = ({ setSummary, setLoading }) => {
     </form>
   );
 };
+
+Form.propTypes = {
+  setSummary: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired 
+}
 
 export default Form;
