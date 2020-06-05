@@ -6,13 +6,13 @@ export function calculateBrand(brand) {
     let increment;
 
     switch(brand) {
-        case 'european':
+        case 'europeo':
             increment = 1.30;
             break;
-        case 'american':
+        case 'americano':
             increment = 1.15;
             break;
-        case 'asian':
+        case 'asiatico':
             increment = 1.05;
             break;
         default:
@@ -24,4 +24,8 @@ export function calculateBrand(brand) {
 
 export function getPlan(plan) {
     return (plan === 'basic') ? 1.20 : 1.50;
+}
+
+export function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
 }

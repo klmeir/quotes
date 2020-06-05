@@ -122,9 +122,9 @@ const Form = ({ setSummary }) => {
           onChange={getData}
         >
           <option value="">-- Seleccione --</option>
-          <option value="american">Americano</option>
-          <option value="european">Europeo</option>
-          <option value="asian">Asiatico</option>
+          <option value="americano">Americano</option>
+          <option value="europeo">Europeo</option>
+          <option value="asiatico">Asiatico</option>
         </Select>
       </Field>
 
