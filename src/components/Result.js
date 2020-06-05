@@ -1,0 +1,41 @@
+import React from 'react';
+import styled from '@emotion/styled';
+
+const Message = styled.p`
+  background-color: rgb(127, 224, 237);
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+`;
+
+const ResultQuotation = styled.div`
+  background-color: rgb(127, 224, 237);
+  border: 1px solid #26C6DA;
+  margin-top: 1rem;
+  padding: .5rem;
+  position: relative;
+  text-align: center; 
+`;
+
+const TextQuotation = styled.p`
+  color: #00838f;
+  font-weight: bold;
+  margin: 0;
+  padding: 1rem;
+  text-transform: uppercase;    
+
+`;
+
+const Result = ({ quotation }) => {
+    return (         
+        (quotation === 0) ? <Message>Elige marca, año y tipo de seguro</Message> 
+        : 
+        (
+            <ResultQuotation>
+                <TextQuotation>El total es: ${quotation} </TextQuotation>
+            </ResultQuotation>
+        )
+    );
+}
+    
+export default Result;

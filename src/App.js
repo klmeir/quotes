@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import Header from './components/Header';
 import Form from './components/Form';
 import Summary from './components/Summary';
+import Result from './components/Result';
 
 const Container = styled.div`
   max-width: 600px;
@@ -25,7 +26,7 @@ function App() {
     }
   });
 
-  const { data } = summary;
+  const { quotation, data } = summary;
 
   return (
     <Container>
@@ -39,7 +40,10 @@ function App() {
         />
         <Summary 
           data={data}           
-        />       
+        />  
+        <Result
+          quotation={quotation}
+        />        
       </ContainerForm>
     </Container>    
   );
